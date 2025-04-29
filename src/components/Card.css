@@ -1,0 +1,40 @@
+.card{
+    height: 300px;
+    width: 220px;
+    border-radius: 25px;
+    margin-top: 40px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 14px 14px 19px 4px gray;
+}
+
+.titleDiv{
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 -7px 0;
+}
+
+.recipeimg{
+    height: 150px;
+    width: 150px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.recipename{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+}
+
+.recipecuisine{
+    margin-top: 20px;
+}
