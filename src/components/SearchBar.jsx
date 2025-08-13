@@ -1,29 +1,27 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useCallback } from 'react'
 
-function SearchBar() {
-  const [serach,setSearch] = useState('');
 
-  const debounce = (fnc,timer) => {
-    let timeout;
-    return (...args) => {
-      clearTimeout(timeout);
-      
-      setTimeout(()=>{
-        fnc.apply(this,args);
-      },timer)
-    }
-  }
 
-  
+
+
+function SearchBar({ search, setSearch }) {
+  // Immediate update of input value
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+  };
 
   return (
     <div>
-        <h1>Searchbar</h1>
+      <h1>Searchbar</h1>
       <div>
-        <input onChange={(e)=>{setSearch(e.target.value)}} placeholder='Enter Dish ...'/>
+        <input
+          value={search}
+          onChange={handleChange}
+          placeholder="Enter Dish ..."
+        />
       </div>
     </div>
-  )
+  );
 }
 
 export default SearchBar
