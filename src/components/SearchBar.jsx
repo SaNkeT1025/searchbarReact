@@ -1,8 +1,3 @@
-import React, { useState, useRef, useCallback } from 'react'
-
-
-
-
 
 function SearchBar({ search, setSearch }) {
   // Immediate update of input value

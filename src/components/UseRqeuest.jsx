@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 function UseRqeuest(api) {
@@ -17,11 +17,6 @@ function UseRqeuest(api) {
    } 
    fetchdata()
   },[api])
- 
-
-  
-  
-
   return {
     data,error
   }

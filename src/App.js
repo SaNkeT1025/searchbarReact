@@ -1,10 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import SearchBar from './components/SearchBar';
 import ProductList from './components/ProductList';
 import UseRqeuest from './components/UseRqeuest';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 function App() {
   const recipeApi = "https://dummyjson.com/recipes";
@@ -12,7 +11,6 @@ function App() {
   const [filteredData, setFilteredData] = useState();
   const { data, error } = UseRqeuest(recipeApi);
 
-  // Debounce filtering logic
   const timeoutRef = React.useRef();
   React.useEffect(() => {
     if (!data) return;
@@ -25,9 +23,12 @@ function App() {
         )
       });
     }, 500);
-    // Cleanup on unmount
     return () => clearTimeout(timeoutRef.current);
   }, [search, data]);
+
+  if(error) {
+    return <div>Error fetching data: {error.message}</div>;
+  }
 
   return (
     <div className="App">
